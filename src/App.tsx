@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 
 import { NavBar } from "./common/index";
+import "./styles/main.scss";
 
 interface Props {
     routes: ReadonlyArray<{
