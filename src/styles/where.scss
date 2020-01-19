@@ -1,0 +1,27 @@
+@import "colors";
+
+.where-cover {
+    background: url("/images/registry.jpg") no-repeat center center fixed;
+    height: 50%;
+    top: -10vh;
+}
+
+.where-cover-content {
+    padding-top: 35vh;
+}
+
+.where-row {
+    display: flex;
+    flex-direction: row;
+    width: 150%;
+    margin: 0 -25%;
+}
+
+.event {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 2em 1em;
+    flex: 1;
+    padding: 2em;
+    border-radius: 1em;
+}

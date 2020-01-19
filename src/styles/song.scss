@@ -1,0 +1,11 @@
+@import "colors";
+
+.song-cover {
+    background: url("/images/registry.jpg") no-repeat center center fixed;
+    height: 50%;
+    top: -10vh;
+}
+
+.song-cover-content {
+    padding-top: 35vh;
+}

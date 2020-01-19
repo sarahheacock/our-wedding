@@ -1,5 +1,5 @@
 export * from "./Home";
-export * from "./EventDetails";
+export * from "./WhenWhere";
+export * from "./Hotels";
 export * from "./Registry";
-export * from "./RSVP";
 export * from "./SongList";

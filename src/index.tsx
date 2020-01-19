@@ -3,9 +3,9 @@ import * as ReactDOM from "react-dom";
 
 import {
     Home,
-    EventDetails,
+    WhenWhere,
+    Hotels,
     Registry,
-    RSVP,
     SongList,
 } from "./routes/index";
 import App from "./App";
@@ -19,9 +19,13 @@ const routes: ReadonlyArray<{
         name: "Home",
         path: "/",
     }, {
-        MyRoute: (): JSX.Element => <EventDetails />,
-        name: "Event Details",
-        path: "/event-details",
+        MyRoute: (): JSX.Element => <WhenWhere />,
+        name: "When & Where",
+        path: "/when-where",
+    }, {
+        MyRoute: (): JSX.Element => <Hotels />,
+        name: "Hotels",
+        path: "/hotels",
     }, {
         MyRoute: (): JSX.Element => <Registry />,
         name: "Registry",
@@ -30,11 +34,7 @@ const routes: ReadonlyArray<{
         MyRoute: (): JSX.Element => <SongList />,
         name: "Song Requests",
         path: "/song-list",
-    }, {
-        MyRoute: (): JSX.Element => <RSVP />,
-        name: "RSVP",
-        path: "/rsvp",
-}];
+    }];
 
 ReactDOM.render(
     <App routes={routes} />,

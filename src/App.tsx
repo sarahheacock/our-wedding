@@ -5,8 +5,11 @@ import {
     Route,
 } from "react-router-dom";
 
-import { NavBar } from "./common/index";
+import { NavBar, Modal, RSVP, Footer } from "./common/index";
+
 import "./styles/main.scss";
+// import "./styles/modal.scss";
+// import "./styles/navbar.scss";
 
 interface Props {
     routes: ReadonlyArray<{
@@ -16,11 +19,30 @@ interface Props {
     }>;
 }
 
-class App extends React.Component<Props> {
+interface State {
+    isModalOpen: boolean;
+}
+
+class App extends React.Component<Props, State> {
+    state: Readonly<State> = {
+        // isModalOpen: false,
+        isModalOpen: true,
+    };
+
+    closeModal = (): void => {
+        this.setState({ isModalOpen: false });
+    }
+
+    launchModal = (): void => {
+        this.setState({ isModalOpen: true });
+    }
+
     render(): JSX.Element {
         const { routes } = this.props;
+        const { isModalOpen } = this.state;
+
         const routeLayouts = routes.map(({ path, MyRoute }) => (
-            <Route exact path={path} key={path}>
+            <Route exact path={path} key={`route${path}`}>
                 <MyRoute />
             </Route>
         ));
@@ -32,8 +54,12 @@ class App extends React.Component<Props> {
         return (
             <Router>
                 <div>
-                    <NavBar routes={routeLinks} />
+                    <NavBar routes={routeLinks} launchModal={this.launchModal} />
                     <Switch>{routeLayouts}</Switch>
+                    <Footer launchModal={this.launchModal} />
+                    <Modal isOpen={isModalOpen} closeModal={this.closeModal}>
+                        <RSVP onSubmit={this.closeModal} />
+                    </Modal>
                 </div>
             </Router>
         );
