@@ -1,86 +1,109 @@
 @import "colors";
 
-.bar {
+/* Add a black background color to the top navigation */
+.topnav {
     background-color: white;
     position: sticky;
     top: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.navbar {
-    display: flex;
-    margin: auto;
-    max-width: 1400px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0em 0.3em;
+/* Style the links inside the navigation bar */
+.topnav {
+    a {
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 0.9em 0.9em;
+        text-decoration: none;
+    }
+
+    .button-group {
+        float: right;
+    }
 }
 
-.navigation {
-    margin: 0;
-    list-style-type: none;
-    text-decoration: none;
-    display: flex;
-    justify-content: flex-end;
+/* Change the color of links on hover */
+.nav-item {
+    color: $navy;
 }
 
-.navigation-item {
-    text-decoration: none;
-    list-style-type: none;
-    display: block;
-    padding: 0.9em 0.9em;
-    text-align: center;
-}
-
-.active-navigation-item {
-    color: white;
-    background: darken($white, 40%);
-}
-
-.active-navigation-item:hover {
-    color: white;
-    background: darken($white, 40%);
+.topnav .nav-item:hover {
+    background: darken($white, 2%);
+    color: $navy;
 }
 
 .logo {
-    color: darken($gray, 20%);
-    text-decoration: none;
-    list-style-type: none;
-    padding: 0em 0.9em;
-    line-height: 0px;
-    font-size: 2em;
+    //font-size: 2em;
+    margin: 0em;
+    line-height: 1em;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 0.5em 0.9em;
+    color: $navy;
 }
 
-.navigation-item:hover {
-    cursor: pointer;
+.active-item {
+    color: $white;
+    background: lighten($navy, 5%);
 }
 
-.navigation-item-hover:hover {
+.active-item:hover {
+    color: $white;
+    background: lighten($navy, 5%);
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+.icon:hover {
     background: darken($white, 2%);
-    color: $gray;
 }
 
-@media all and (max-width: 1100px) {
-    .navigation {
-        justify-content: space-around;
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 1075px) {
+    .topnav {
+        a {
+            display: none;
+        }
+
+        .icon {
+            float: right;
+            display: block;
+        }
+
+        .button-group {
+            float: none;
+        }
     }
 }
 
-@media all and (max-width: 1075px) {
-    .logo {
-        display: none;
-    }
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 1075px) {
+    .topnav.responsive {
+        position: relative;
 
-    .navigation {
-        flex-flow: column wrap;
-        padding: 0;
-        flex: 1;
-    }
+        .logo {
+            float: none;
+            display: block;
+            text-align: left;
+        }
 
-    .navigation-item {
-        text-align: center;
-        padding: 10px;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        a {
+            float: none;
+            display: block;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
     }
 }

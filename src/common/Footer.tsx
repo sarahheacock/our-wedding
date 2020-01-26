@@ -11,14 +11,13 @@ export class Footer extends React.Component<Props> {
             <div>
                 <div className="white-background">
                     <div className="content">
-                        <h3>We would love to have you!</h3>
-                        <p><i className="fas fa-heart"></i></p>
-                        <a href="#" onClick={launchModal} className="rsvp-btn">RSVP here</a>
+                        <h2>We would love to have you! <i className="fas fa-heart"></i></h2>
+                        <p>Click on the RSVP button below</p>
+                        <p><button onClick={launchModal} className="rsvp-btn">RSVP</button></p>
                     </div>
                 </div>
                 <div className="content footer">
-                    <a href="http://www.anjphotographer.com/">Photography by Andrea M Scrivanich <i className="fas fa-camera"></i></a>
-                    {/* <p>Icons made by <span><a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></span></p> */}
+                    <a href="http://www.anjphotographer.com/">Photography by Andrea M Scrivanich</a> <i className="fas fa-camera" style={{ fontSize: "1.7em" }}></i>
                 </div>
             </div>
         );

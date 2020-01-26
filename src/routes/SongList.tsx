@@ -6,11 +6,11 @@ export class SongList extends React.Component {
             <div>
                 <div className="cover song-cover">
                     <div className="cover-content song-cover-content">
-                        <h2>Come dance with us!</h2>
+                        <h1>Come dance with us!</h1>
                     </div>
                 </div>
                 <div className="content">
-                    <h1>Song Requests</h1>
+                    <h2>Song Requests</h2>
                     <p>Sorry, we're a little slow...<br />
                     We'll get song requests up soon!</p>
                 </div>

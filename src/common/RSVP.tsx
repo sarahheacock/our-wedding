@@ -2,8 +2,11 @@ import * as React from "react";
 
 interface InputProps {
     type: string;
-    placeholder: string;
     name: string;
+    onChange: (e: any) => void;
+    placeholder?: string;
+    value?: string;
+    checked?: boolean;
 }
 
 class Input extends React.Component<InputProps> {
@@ -31,6 +34,7 @@ interface State {
     email: string;
     message: string;
     num: string;
+    numChild: string;
     attending: string;
 }
 
@@ -48,14 +52,16 @@ export class RSVP extends React.Component<Props, State> {
         message: "",
         name: "",
         num: "",
+        numChild: "",
     };
 
-    onFormChange = (e): void => {
+    onFormChange = (e: any): void => {
         const { type, name, value } = e.target;
 
         if (type === "radio") {
             this.setState({ attending: name });
         } else {
+            // @ts-ignore
             this.setState({ [name]: value });
         }
     }
@@ -69,7 +75,7 @@ export class RSVP extends React.Component<Props, State> {
             return alert("Oops! Looks like you're missing some required fields.");
         }
 
-        fetch("http://localhost:3000/rsvp", {
+        fetch("/rsvp", {
             body: JSON.stringify(this.state),
             headers: {
                 "Content-Type": "application/json",
@@ -78,11 +84,11 @@ export class RSVP extends React.Component<Props, State> {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log("Success:", data);
+            // console.log("Success:", data);
             return alert("Yay! Thank you for sending your RSVP!");
         })
         .catch((error) => {
-            console.error("Error:", error);
+            // console.error("Error:", error);
             return alert("Oops! Looks like something is wrong with our server. Reach out to us! 615-525-1915");
         });
     }
@@ -123,7 +129,14 @@ export class RSVP extends React.Component<Props, State> {
                         <Input
                             type="number"
                             name="num"
-                            placeholder="* Number of Guests (Including Yourself)"
+                            placeholder="* Number of Adult Guests (Including Yourself)"
+                            onChange={this.onFormChange}
+                            value={num}
+                        />
+                        <Input
+                            type="number"
+                            name="num"
+                            placeholder="* Number of Child Guests Ages 0-12"
                             onChange={this.onFormChange}
                             value={num}
                         />
@@ -131,7 +144,7 @@ export class RSVP extends React.Component<Props, State> {
                             <textarea
                                 name="message"
                                 className="text-input"
-                                rows="2"
+                                rows={2}
                                 placeholder="  Message"
                                 onChange={this.onFormChange}
                                 value={message}
@@ -143,7 +156,7 @@ export class RSVP extends React.Component<Props, State> {
                     </div>
                 </div>
                 <div className="modal-footer">
-                    <a className="rsvp-btn" onClick={this.handleFormSubmit}>Submit RSVP!</a>
+                    <button className="rsvp-btn" onClick={this.handleFormSubmit}>Submit RSVP!</button>
                 </div>
             </div>
         );

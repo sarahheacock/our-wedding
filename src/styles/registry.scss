@@ -1,11 +1,11 @@
 @import "colors";
 
 .registry-cover {
-    background: url("/images/registry.jpg") no-repeat center center fixed;
-    height: 50%;
-    top: -10vh;
+    background: url("/images/registry.jpg");
+    background-position: center center;
+    height: 60vh;
 }
 
 .registry-cover-content {
-    padding-top: 35vh;
+    padding-top: 45vh;
 }

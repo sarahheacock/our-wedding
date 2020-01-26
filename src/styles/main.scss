@@ -8,44 +8,44 @@ body {
     position: relative;
     text-align: center;
     background-color: $white;
+    color: $gray;
 }
 
 h1 {
-    margin: 0;
-    padding: 0;
-    font-family: 'Lobster',
-    cursive;
-    color: darken($gray, 20%);
-    font-size: 2.5em;
+    // margin: 0;
+    // padding: 0;
+    //font-family: 'Lobster', cursive;
+    // color: darken($gray, 20%);
+    font-size: 2.2em; // 2em
     text-align: center;
-    line-height: 170%;
-    padding-bottom: 2%;
+    // line-height: 170%;
+    // padding-bottom: 2%;
 }
 
 h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 2.5em;
-    line-height: 170%;
-    padding-bottom: 2%;
+    // margin: 0;
+    // padding: 0;
+    font-size: 1.7em; // 1.5em
+    // line-height: 170%;
+    // padding-bottom: 2%;
 }
 
 h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 2em;
-    color: darken($gray, 5%);
-    line-height: 170%;
-    padding-bottom: 2%;
+    // margin: 0;
+    // padding: 0;
+    font-size: 1.37em; // 1.17em
+    // color: darken($gray, 20%);
+    // line-height: 170%;
+    // padding-bottom: 2%;
     font-weight: bold;
 }
 
 a {
-    margin: 0;
-    padding: 0;
+    // margin: 0;
+    // padding: 0;
     font-size: 1.2em;
     color: $gray;
-    line-height: 170%;
+    // line-height: 170%;
     cursor: pointer;
 }
 
@@ -54,23 +54,28 @@ a:hover {
 }
 
 .rsvp-btn {
-    background: darken($white, 40%);
-    padding: 1em 1.5em;
-    border-radius: 0.5em;
-    color: white;
-    text-decoration: none;
+    // background: darken($white, 40%);
+    background-color: lighten($navy, 5%);
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    color: $white;
+    // text-decoration: none;
+    font-size: 1.2em;
 }
 
 .rsvp-btn:hover {
-    background: darken($white, 45%);
+    cursor: pointer;
+    background-color: $navy;
+
+    // background: darken($white, 45%);
     color: white;
 }
 
 p {
     margin: 0;
     padding: 0;
-    font-size: 1.5em;
-    color: $gray;
+    font-size: 1.2em;
+    // color: $gray;
     line-height: 170%;
     padding-bottom: 3%;
 }
@@ -128,7 +133,7 @@ textarea {
 }
 
 b {
-    color: darken($gray, 30%);
+    // color: darken($gray, 20%);
     font-weight: bolder;
 }
 
@@ -141,7 +146,8 @@ b {
 .content {
     margin: 0 auto;
     max-width: 900px;
-    padding: 2em 1em 3.5em 1em;
+    // padding: 2em 1em 3.5em 1em;
+    padding: 2em 1em;
 }
 
 .white-background {
@@ -152,16 +158,38 @@ b {
 .cover {
     background-size: cover;
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@media screen and (max-width: 1075px) {
+    .cover {
+        background-attachment: scroll;
+    }
 }
 
 .cover-content {
     text-align: center;
     width: "100%";
-    color: $white;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 100%;
+
+    h1 {
+        
+    }
 
     b {
-        color: white;
+        color: $pink;
         font-weight: bolder;
     }
+}
+
+.fa-heart {
+    color: $pink;
+}
+
+.fa-camera {
+    color: lighten($navy, 10%);
 }
 

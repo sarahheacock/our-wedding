@@ -1,11 +1,11 @@
 @import "colors";
 
 .hotel-cover {
-    background: url("/images/registry.jpg") no-repeat center center fixed;
-    height: 50%;
-    top: -10vh;
+    background-image: url("/images/regist.jpg");
+    background-position: right bottom;
+    height: 60vh;
 }
 
 .hotel-cover-content {
-    padding-top: 35vh;
+    padding-top: 45vh;
 }

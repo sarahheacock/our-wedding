@@ -1,12 +1,14 @@
 @import "colors";
 
 .home-cover {
-    background: url("/images/home.jpg") no-repeat center center fixed;
+    background-image: url("/images/home.jpg");
     background-position: center top;
-    top: 10vh;
-    height: 80%;
+    height: 100vh;
 }
 
 .home-cover-content {
-    padding-top: 35vh;
+    padding: 5em;
+    padding-top: 55vh;
+    float: right;
+    //width: 100%;
 }

@@ -45,11 +45,11 @@ export class Hotels extends React.Component {
             <div>
                 <div className="cover hotel-cover">
                     <div className="cover-content hotel-cover-content">
-                        <h2>Where to Stay??</h2>
+                        <h1>Where to Stay??</h1>
                     </div>
                 </div>
                 <div className="content">
-                    <h1>Hotels</h1>
+                    <h2>Hotels</h2>
                     <p>
                         We blocked 10 rooms in each Hotels at discounted rates.<br />
                         The block will remain until <b>Sunday, May 17th, 2020.</b><br />

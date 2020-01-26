@@ -8,8 +8,6 @@ import {
 import { NavBar, Modal, RSVP, Footer } from "./common/index";
 
 import "./styles/main.scss";
-// import "./styles/modal.scss";
-// import "./styles/navbar.scss";
 
 interface Props {
     routes: ReadonlyArray<{
@@ -25,8 +23,8 @@ interface State {
 
 class App extends React.Component<Props, State> {
     state: Readonly<State> = {
-        // isModalOpen: false,
-        isModalOpen: true,
+        isModalOpen: false,
+        // isModalOpen: true,
     };
 
     closeModal = (): void => {

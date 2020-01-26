@@ -1,27 +1,33 @@
 @import "colors";
 
 .where-cover {
-    background: url("/images/registry.jpg") no-repeat center center fixed;
-    height: 50%;
-    top: -10vh;
+    background-image: url("/images/wall.jpg");
+    background-position: center center;
+    height: 60vh;
 }
 
 .where-cover-content {
-    padding-top: 35vh;
+    padding: 1em;
+    // padding-left: 35%;
+    padding-top: 45vh;
 }
 
 .where-row {
     display: flex;
-    flex-direction: row;
-    width: 150%;
-    margin: 0 -25%;
+    flex-direction: row wrap;
+    flex-wrap: wrap;
+    // width: 150%;
+    // margin: 0 -25%;
 }
 
 .event {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 2em 1em;
+    // border-top: 1px solid rgba(0, 0, 0, 0.1);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 1em;
     flex: 1;
-    padding: 2em;
+    min-width: 300px;
+    padding: 1em;
+    padding-bottom: 2em;
+    background-color: white;
     border-radius: 1em;
 }

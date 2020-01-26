@@ -6,11 +6,11 @@ export class Registry extends React.Component {
             <div>
                 <div className="cover registry-cover">
                     <div className="cover-content registry-cover-content">
-                        <h2>Gifts...</h2>
+                        <h1>Gifts...</h1>
                     </div>
                 </div>
                 <div className="content">
-                    <h1>Registry</h1>
+                    <h2>Registry</h2>
                     <p>Sorry, we're a little slow...<br />
                     We'll post links to our registry soon!</p>
                 </div>

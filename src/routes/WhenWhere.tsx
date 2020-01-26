@@ -25,7 +25,7 @@ export class WhenWhere extends React.Component {
         date: "Sunday, June 21st, 2020",
         image: "",
         link: "https://goo.gl/maps/Kn9rzuD4woBLa3AD6",
-        location: "8400 TN-100, Nashville, TN 37221",
+        location: "Loveless Events 8400 TN-100, Nashville, TN 37221",
         name: "Ceremony & Reception",
         time: "5 - 9pm",
     }, {
@@ -45,11 +45,11 @@ export class WhenWhere extends React.Component {
             <div>
                 <div className="cover where-cover">
                     <div className="cover-content where-cover-content">
-                        <h2>Times and Places?</h2>
+                        <h1>Times and Places?</h1>
                     </div>
                 </div>
                 <div className="content">
-                    <h1>{"When & Where?"}</h1>
+                    <h2>{"When & Where?"}</h2>
                     <div className="where-row">{events}</div>
                 </div>
             </div>
