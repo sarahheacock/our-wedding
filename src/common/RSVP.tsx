@@ -94,7 +94,7 @@ export class RSVP extends React.Component<Props, State> {
     }
 
     render(): JSX.Element {
-        const { attending, email, message, name, num } = this.state;
+        const { attending, email, message, name, num, numChild } = this.state;
         const attendingOptions = this.options.map((option, i) => (
             <span key={`rsvp${option}`}>
                 <Input
@@ -135,10 +135,10 @@ export class RSVP extends React.Component<Props, State> {
                         />
                         <Input
                             type="number"
-                            name="num"
+                            name="numChild"
                             placeholder="* Number of Child Guests Ages 0-12"
                             onChange={this.onFormChange}
-                            value={num}
+                            value={numChild}
                         />
                         <div className="input-wrapper">
                             <textarea

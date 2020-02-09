@@ -7,5 +7,43 @@
 }
 
 .registry-cover-content {
+    padding: 1em;
     padding-top: 45vh;
 }
+
+.registry-row {
+    display: flex;
+    flex-direction: row wrap;
+    flex-wrap: wrap;
+    // align-items: center;
+    // align-content: center;
+    // width: 150%;
+    // margin: 0 -25%;
+}
+
+.registry-link {
+    // border-top: 1px solid rgba(0, 0, 0, 0.1);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 1em;
+    width: 230px;
+    padding: 1em;
+    padding-bottom: 2em;
+    background-color: white;
+    border-radius: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    flex-shrink: 0;
+    flex-grow: 1;
+
+    img {
+        width: 80%;
+        border-radius: 0.5em;
+        margin-bottom: 1em;
+    }
+}
+

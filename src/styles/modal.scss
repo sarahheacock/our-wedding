@@ -38,6 +38,7 @@
     width: 90%;
     max-width: 900px;
     max-height: 90vh;
+    overflow: scroll;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     -webkit-transform: translate(0, -500%);
     -ms-transform: translate(0, -500%);
@@ -49,8 +50,8 @@
 }
 
 .modal-body {
-    max-height: 60vh;
-    overflow: scroll;
+    // max-height: 60vh;
+    // overflow: scroll;
     padding: 1em;
 }
 
@@ -83,5 +84,5 @@
 
 .modal-footer {
     border-top: #eeeeee solid 1px;
-    padding: 2em;
+    // padding: 2em;
 }
