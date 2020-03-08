@@ -2,9 +2,11 @@ import * as React from "react";
 
 import { api } from "../constants";
 import { Input } from "./index";
+import { SongInfo } from "../routes/SongList";
 
 interface Props {
     onSubmit: () => void;
+    editSong: SongInfo | null;
 }
 
 interface State {
@@ -22,17 +24,31 @@ export class SongForm extends React.Component<Props, State> {
         "Regretfully will not be able to attend",
     ];
 
-    state: Readonly<State> = {
-        artist: "",
-        hasSubmitted: false,
-        image: "",
-        song: "",
-    };
+    constructor(props: Props) {
+        super(props);
+
+        if (props.editSong !== null) {
+            const { artist, image, song } = props.editSong;
+            this.state = {
+                artist,
+                hasSubmitted: false,
+                image,
+                song,
+            };
+        } else {
+            this.state = {
+                artist: "",
+                hasSubmitted: false,
+                image: "",
+                song: "",
+            };
+        }
+    }
 
     get isValid(): { [k in keyof State]: boolean } {
         // @ts-ignore
         return Object.entries(this.state).reduce((cumm, [key, val]) => {
-            return { ...cumm, [key]: !this.state.hasSubmitted || key === "image" || !!val };
+            return { ...cumm, [key]: !this.state.hasSubmitted || key === "image" || typeof val === "boolean" || !!val };
         }, {} as any);
     }
 
@@ -51,16 +67,18 @@ export class SongForm extends React.Component<Props, State> {
 
     postForm = (): void => {
         if (!this.isDone) {
-            // return alert("Oops! Looks like you're missing some required fields.");
-            return;
+            return alert("Oops! Looks like you're missing some required fields.");
         }
 
-        fetch(`${api}/songs`, {
+        const song = this.props.editSong;
+        const id = (song) ? song._id : "";
+
+        fetch(`${api}/songs/${id}`, {
             body: JSON.stringify(this.state),
             headers: {
                 "Content-Type": "application/json",
             },
-            method: "POST", // or 'PUT'
+            method: (id) ? "PUT" : "POST", // or 'PUT'
         })
         .then((response) => response.json())
         .then((data) => {
