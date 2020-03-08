@@ -9,3 +9,40 @@
 .song-cover-content {
     padding-top: 45vh;
 }
+
+.song-form {
+    padding-bottom: 3em;
+}
+
+.border-top {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.song-row {
+    margin: 1em;
+    flex: 1;
+    padding: 1em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+
+    .image {
+        margin: 0em 1em;
+
+        img {
+            max-height: 3em;
+        }
+    }
+
+    .description {
+        margin: 0em 1em;
+        flex: 1;
+
+        p {
+            padding-bottom: 0em;
+        }
+    }
+}

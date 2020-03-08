@@ -52,7 +52,7 @@ export class Registry extends React.Component {
                 </div>
                 <div className="content">
                     <h2>Registry</h2>
-                    <p>Thank you so much for your gifts! We don't need need any house hold items.<br />
+                    <p>Thank you so much for your gifts! We don't need any house hold items.<br />
                         However, we would love help with our honeymoon fund and donations to our favorite charities.</p>
                     <div className="registry-row">{links}</div>
                 </div>

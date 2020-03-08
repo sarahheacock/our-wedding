@@ -71,6 +71,23 @@ a:hover {
     color: white;
 }
 
+.btn {
+    background-color: lighten($white, 5%);
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    color: lighten($navy, 5%);
+    font-size: 1.2em;
+    border-color: darken($white, 10%);
+    //border-width: 0.1em;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: darken($white, 5%);
+    // border-color: $navy;
+    color: $navy;
+}
+
 p {
     margin: 0;
     padding: 0;

@@ -56,7 +56,7 @@ class App extends React.Component<Props, State> {
                     <Switch>{routeLayouts}</Switch>
                     <Footer launchModal={this.launchModal} />
                     <Modal isOpen={isModalOpen} closeModal={this.closeModal}>
-                        <RSVP onSubmit={this.closeModal} />
+                        {(isModalOpen) ? <RSVP onSubmit={this.closeModal} /> : null}
                     </Modal>
                 </div>
             </Router>
