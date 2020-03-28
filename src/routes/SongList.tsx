@@ -61,6 +61,7 @@ export class SongList extends React.Component<{}, State> {
         })
         .then((response) => response.json())
         .then((data) => {
+            // tslint:disable-next-line
             console.log("Success:", data);
             this.setState({ songs: data.songs });
         })

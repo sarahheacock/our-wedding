@@ -67,7 +67,8 @@ export class SongForm extends React.Component<Props, State> {
 
     postForm = (): void => {
         if (!this.isDone) {
-            return alert("Oops! Looks like you're missing some required fields.");
+            // return alert("Oops! Looks like you're missing some required fields.");
+            return;
         }
 
         const song = this.props.editSong;
@@ -108,21 +109,21 @@ export class SongForm extends React.Component<Props, State> {
                         <p>Thank you for helping make our playlist!<br />Add any kid friendly song below.</p>
                         <Input
                             type="text"
-                            name="artist"
-                            placeholder="Artist Name"
-                            onChange={this.onFormChange}
-                            value={artist}
-                            isDisabled={false}
-                            isValid={isValid.artist}
-                        />
-                        <Input
-                            type="text"
                             name="song"
                             placeholder="Song"
                             onChange={this.onFormChange}
                             value={song}
                             isDisabled={false}
                             isValid={isValid.song}
+                        />
+                        <Input
+                            type="text"
+                            name="artist"
+                            placeholder="Artist Name"
+                            onChange={this.onFormChange}
+                            value={artist}
+                            isDisabled={false}
+                            isValid={isValid.artist}
                         />
                     </div>
                 </div>

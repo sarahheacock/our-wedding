@@ -1,3 +1,5 @@
+export * from "./Corona";
+export * from "./CoronaAlert";
 export * from "./NavBar";
 export * from "./Footer";
 export * from "./RSVP";

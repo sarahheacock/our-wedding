@@ -1,0 +1,18 @@
+@import "colors";
+
+.alert {
+    p {
+        padding: 1em;
+        color: darken($pink, 20%);
+    }
+
+    a {
+        text-decoration: underline;
+        font-size: 0.95em;
+        font-weight: bolder;
+    }
+}
+
+.email-form {
+    padding-bottom: 3em;
+}

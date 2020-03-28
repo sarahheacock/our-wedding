@@ -5,7 +5,7 @@ import {
     Route,
 } from "react-router-dom";
 
-import { NavBar, Modal, RSVP, Footer } from "./common/index";
+import { Corona, CoronaAlert, NavBar, Modal, RSVP, Footer } from "./common/index";
 
 import "./styles/main.scss";
 
@@ -18,21 +18,37 @@ interface Props {
 }
 
 interface State {
-    isModalOpen: boolean;
+    isModalOpen: {
+        corona: boolean;
+        rsvp: boolean;
+    };
 }
 
 class App extends React.Component<Props, State> {
     state: Readonly<State> = {
-        isModalOpen: false,
+        isModalOpen: {
+            corona: false, // TODO
+            rsvp: false,
+        },
         // isModalOpen: true,
     };
 
     closeModal = (): void => {
-        this.setState({ isModalOpen: false });
+        this.setState({
+            isModalOpen: {
+                corona: false,
+                rsvp: false,
+            },
+        });
     }
 
-    launchModal = (): void => {
-        this.setState({ isModalOpen: true });
+    launchModal = (type: keyof State["isModalOpen"]): void => {
+        this.setState({
+            isModalOpen: {
+                ...this.state.isModalOpen,
+                [type]: true,
+            },
+        });
     }
 
     render(): JSX.Element {
@@ -49,14 +65,24 @@ class App extends React.Component<Props, State> {
             path,
         }));
 
+        const modalOpen = Object.values(isModalOpen).reduce((cumm, curr) => (cumm || curr), false);
+
+        let modalContent: JSX.Element | null = null;
+        if (isModalOpen.rsvp) {
+            modalContent = <RSVP onSubmit={this.closeModal} />;
+        } else if (isModalOpen.corona) {
+            modalContent = <Corona onSubmit={this.closeModal} />;
+        }
+
         return (
             <Router>
                 <div>
-                    <NavBar routes={routeLinks} launchModal={this.launchModal} />
+                    <CoronaAlert launchModal={() => this.launchModal("corona")} />
+                    <NavBar routes={routeLinks} launchModal={() => this.launchModal("rsvp")} />
                     <Switch>{routeLayouts}</Switch>
-                    <Footer launchModal={this.launchModal} />
-                    <Modal isOpen={isModalOpen} closeModal={this.closeModal}>
-                        {(isModalOpen) ? <RSVP onSubmit={this.closeModal} /> : null}
+                    <Footer launchModal={() => this.launchModal("rsvp")} />
+                    <Modal isOpen={modalOpen} closeModal={this.closeModal}>
+                        {modalContent}
                     </Modal>
                 </div>
             </Router>
